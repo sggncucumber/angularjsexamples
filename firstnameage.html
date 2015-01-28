@@ -1,0 +1,20 @@
+<html ng-app>
+<head>
+	<meta charset="utf-8">
+	<script src="./library/angular.min.js"></script>
+	<script>
+		var module1 = angular.module ("module1",[]);
+		var mycontroller = module1.controller("mycontroller", function mycontroller($scope)
+			{
+				$scope.firstName = "Ganesan S";
+				$scope.age = "35";
+			});
+	</script>
+</head>
+<body>
+	Enter your first name:  <input ng-model="firstName" type="text"/><br/>
+	Enter your age:			<input ng-model="age" type="text" />
+	<h1>Name:  <b><i>{{firstName}}</i></b></h1>
+	<h1>Age:  <b><i>{{age}}</i></b></h1>
+</body>
+</html>

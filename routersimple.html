@@ -1,0 +1,49 @@
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<script src="./library/angular.min.js"></script>
+		<script src="./library/angular-route.min.js"></script>
+		<script>
+			var app = angular.module("app", ["ngRoute"]);
+			app.config(function($routeProvider){
+				$routeProvider.
+				when("/",{
+					template:'<ul ng-repeat=\'product in products\'><li>{{product.name}} - {{product.weight}} - {{product.price}} - {{product.image}}</li></ul>',
+					controller:"simplecontroller"
+				}).
+				when("/:productsearch",{
+					template: '<h1>{{filteredproduct.name}}</h1>',
+					controller: "searchcontroller"
+				}).
+				otherwise({
+					redirectTo: "/"
+				});
+			});
+
+			app.controller("simplecontroller", ['$scope','$http',function(scope,http){
+				http.get('products_1.json').success(function(data){
+					scope.products = data;
+				});
+			}]);
+
+			app.controller("searchcontroller",function($scope,$routeParams, $http){
+				console.log("routeParams:  " + $routeParams.productsearch);
+				$scope.criteria = $routeParams.productsearch;
+				return $http.get("products_1.json").success(function(data){
+
+					$scope.filteredproduct = data.filter(function(o){
+						//console.log(o.name);
+						if( $scope.criteria === o.name)
+						{
+							console.log($scope.criteria + " === " + o.name);
+							return	$scope.criteria === o.name;
+						}
+					})[0];
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div ng-view></div>
+	</body>
+</html>

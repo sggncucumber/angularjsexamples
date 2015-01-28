@@ -1,0 +1,20 @@
+<html ng-app="module1">
+<head>
+	<meta charset="utf-8">
+	<script src="/home/ganesan/angularsite/library/angular.min.js"></script>
+	<script>
+		var module1 = angular.module ("module1",[]);
+		var count=0;
+		var mycontroller = module1.controller("mycontroller", function mycontroller($scope)
+			{
+				$scope.products = ["Banana","Apple","Orange","Dates","Pommogranate","Grapes"];
+			});
+
+	</script>
+</head>
+<body ng-controller="mycontroller">
+	<ol>
+		<h2><li ng-repeat="p in products">{{p}}</li></h2>
+	</ol>
+</body>
+</html>

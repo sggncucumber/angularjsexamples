@@ -1,0 +1,28 @@
+<html ng-app="module1">
+<head>
+	<meta charset="utf-8">
+	<script src="/home/ganesan/angularsite/library/angular.min.js"></script>
+	<script>
+		var module1 = angular.module ("module1",[]);
+		var count=0;
+		var mycontroller = module1.controller("mycontroller", function mycontroller($scope)
+			{
+				$scope.products = ["Banana","Apple","Orange","Dates","Pommogranate","Grapes"];
+				$scope.additem = function(){
+					$scope.products.push($scope.productinclude);
+					$scope.productinclude = '';
+				};
+			});
+
+	</script>
+</head>
+<body ng-controller="mycontroller">
+	<ol>
+		<h2><li ng-repeat="p in products">{{p}}</li></h2>
+	</ol>
+	<form ng-submit="additem()">
+		<input type="text" ng-model="productinclude"></input>
+		<input type="submit" value="addproduct"></input>
+	</form>
+</body>
+</html>

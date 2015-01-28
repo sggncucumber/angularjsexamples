@@ -1,0 +1,30 @@
+[
+    {
+        "name": "xApple",
+        "price": 10.00
+    },
+    {
+        "name": "gApple1",
+        "price": 10.10
+    },
+    {
+        "name": "bApple2",
+        "price": 10.40
+    },
+    {
+        "name": "fApple3",
+        "price": 8.30
+    },
+    {
+        "name": "cApple4",
+        "price": 7.00
+    },
+    {
+        "name": "aApple5",
+        "price": 9.20
+    },
+        {
+        "name": "dOrange",
+        "price": 10.02
+    }
+]

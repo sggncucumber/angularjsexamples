@@ -1,0 +1,30 @@
+<html ng-app="app">
+	<head>
+	 	<meta charset="utf-8">
+		<script src="./library/angular.min.js"></script>
+		<script>
+			var app = angular.module("app", []);
+
+			app.controller("mycontroller", ['$scope','$http',function(scope,http){
+				//$scope.products = [{"name":"Apple","price":"10.00"},{"name":"Orange","price":"8.00"}];
+				console.log("http test...");
+				http.get('products.json').success(function(data){
+					scope.products = data;
+				});
+			}]);
+		</script>
+	</head>
+	<body ng-controller="mycontroller">
+		Search product: <input type="text" ng-model="searchproduct"/>
+		<table>
+			<tr>
+				<th>Product Name</th>
+				<th>Price</th>
+			</tr>
+			<tr ng-repeat="product in products | filter:searchproduct | orderBy:'-price'">
+				<td>{{product.name}}</td>
+				<td>{{product.price}}</td>
+			</tr>
+		</table>
+	</body>
+</html>

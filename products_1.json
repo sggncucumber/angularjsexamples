@@ -1,0 +1,44 @@
+[
+    {
+        "name": "xApple",
+        "price": 10.00,
+        "weight": 11,
+        "image":"./images/1.jpg"
+    },
+    {
+        "name": "gApple1",
+        "price": 10.10,
+        "weight": 110,
+        "image":"./images/2.jpg"
+    },
+    {
+        "name": "bApple2",
+        "price": 10.40,
+        "weight": 310,
+        "image":"./images/3.jpg"
+    },
+    {
+        "name": "fApple3",
+        "price": 8.30,
+        "weight": 40,
+        "image":"./images/4.jpg"
+    },
+    {
+        "name": "cApple4",
+        "price": 7.00,
+        "weight": 250,
+        "image":"./images/5.jpg"
+    },
+    {
+        "name": "aApple5",
+        "price": 9.20,
+        "weight": 100,
+        "image":"./images/6.jpg"
+    },
+    {
+        "name": "dOrange",
+        "price": 10.02,
+        "weight": 101,
+        "image":"./images/7.jpg"
+    }
+]
